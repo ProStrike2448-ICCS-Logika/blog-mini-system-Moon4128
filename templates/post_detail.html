@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.content }}</p>
+  <p>
+    Author: <a href="{% url 'author_post_list' post.author.pk %}">{{ post.author }}</a>
+  </p>
+  <p>Published: {{ post.published_date|date:"d.m.Y H:M" }}</p>
+{% endblock content %}

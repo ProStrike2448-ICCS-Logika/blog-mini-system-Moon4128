@@ -22,4 +22,6 @@ from blog.views import post_list
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', post_list, name='post_list'),
+    path('posts/<int:pk>/', post_detail, name='post_detail'),
+    path('authors/<int:author_pk>/posts/', author_post_list, name='author_post_list'),
 ]
