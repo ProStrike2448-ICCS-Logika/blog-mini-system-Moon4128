@@ -5,5 +5,5 @@
   <p>
     Author: <a href="{% url 'author_post_list' post.author.pk %}">{{ post.author }}</a>
   </p>
-  <p>Published: {{ post.published_date|date:"d.m.Y H:M" }}</p>
+  <p>Published: {{ post.published_date|date:"d.m.Y H:i" }}</p>
 {% endblock content %}
