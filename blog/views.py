@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
-from .models import Post
+from .models import Post, Comment
 from django.http import HttpRequest
 
 def post_list(request: HttpRequest):
@@ -12,8 +12,10 @@ def post_list(request: HttpRequest):
 
 def post_detail(request: HttpRequest, pk: int):
     post = get_object_or_404(Post, pk=pk)
+    comments = post.comments.all()
     context = {
         'post': post,
+        'comments': comments,
     }
     return render(request=request, template_name='post_detail.html', context=context)
 
