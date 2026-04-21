@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <ul>
+    {% for post in posts %}
+      <li>
+        <a href="{% url 'post_detail' post.pk %}">{{ post }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
